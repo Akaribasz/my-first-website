@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What u need to study to make a Website like this one:</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script>
+        if (localStorage.getItem('theme')==='dark'){
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <style>
+        p {
+            font-family: monospace;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <button class="website-name" onclick='location.href="rindex.html"'>
+            AlsoKnowAsRibas.com
+            <a class="about-link" href="About.html" target="_blank">
+
+                <button class="about-btn" onclick='location.href="About.html"'>
+                    About
+                </button>
+
+                <a class="github" href="https://github.com/Akaribasz" target="_blank">
+                    <img class="gitLogo" src="Photos/github_logo_icon_229278.webp" alt="">
+                </a>
+                <button class="articles-btn" onclick='location.href="ribas-articles-page.html"'>
+                Articles
+            </button>
+                <input class="searchbar" type="text" placeholder="Search the site...">
+                <div class="trilho" id="trilho">
+                    <div class="indicador"></div>
+
+                </div>
+
+
+
+    </header>
+    <footer class="end-page">
+        © 2026 Luiz Ribas - All Rights Reserved
+
+    </footer>
+
+    <script src="/JavaScript/main.js"></script>
+</body>
