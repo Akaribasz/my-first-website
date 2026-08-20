@@ -1,309 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: white;
     color: black;
-    transition: .5s;
-
-}
-
-input {
-    transition: .5s;
-}
-
-button {
-    transition: .5s;
-}
-
-a {
-    color: black;
-    transition: .5s;
-}
-
-
-
-.about-me {
     font-family: monospace;
-    color: black;
-    text-align: center;
-    font-size: 19px;
-    font-weight: bold;
-}
-
-.YT-LINK {
-    color: black;
-}
-
-footer {
-    text-align: center;
-    vertical-align: bottom;
-    font-family: monospace;
-    font-size: 16px;
-    font-weight: bolder;
-}
-
-header {
+    transition: background-color 0.4s, color 0.4s;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    font-family: monospace;
-    position: sticky;
-    margin-top: 30px;
-    margin-left: 35px;
-    margin-right: 35px;
+    flex-direction: column;
+}
 
+/* ----------------- Header & Navbar ----------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .website-name {
+    background: none;
     border: none;
-    font-family: monospace;
-    vertical-align: top;
-    left: 0;
-    display: inline-block;
-    font-size: 16px;
+    font-family: inherit;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-
 }
 
-.about-btn {
-    margin-top: 2;
-    margin-left: 1240;
-    font-size: 14px;
-    color: black;
-    vertical-align: top;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    font-family: monospace;
-    font-weight: bolder;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    font-size: 0.95rem;
 }
 
 .gitLogo {
     width: 24px;
     height: 24px;
-    vertical-align: top;
-    margin-left: 6px;
-
+    display: block;
 }
 
 .searchbar {
-    margin-top: 3;
-    margin-left: 10;
-    font-family: monospace;
-    border: none;
+    padding: 4px 8px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
 }
 
-.content-page {
-
-    padding-right: 300px;
-    padding-top: 16px;
-    padding-left: 300px;
-    width: 768 px;
-    margin-bottom: 50;
-    display: block;
-
-}
-
-.about {
-
-    text-align: center;
-}
-
-.home-page-content {
-    text-align: center;
-
-}
-
-.title {
-    font-size: 40px;
-    font-weight: bolder;
-    margin-right: 701px;
-    margin-bottom: -1px;
-}
-
+/* ----------------- Theme Switcher ----------------- */
 .trilho {
-    display: inline-block;
-    width: 50px;
-    height: 20px;
+    width: 48px;
+    height: 22px;
     background-color: black;
-    border-radius: 150px;
+    border-radius: 20px;
     position: relative;
     cursor: pointer;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-
 }
 
 .trilho .indicador {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background-color: white;
     border-radius: 50%;
-    transform: scale(.9);
     position: absolute;
-    left: 1px;
-    transition: .5s;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
 }
 
 .trilho.dark {
     background-color: white;
-
 }
 
 .trilho.dark .indicador {
-    left: 26px;
+    left: 28px;
     background-color: black;
-
 }
 
+/* ----------------- Hero / Main Section ----------------- */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+}
+
+.my-photo {
+    width: 380px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-mee {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.bio-text {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ----------------- Animated Text Changer ----------------- */
+.text-changer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.roles-container {
+    overflow: hidden;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.role {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: #00cc33;
+    text-shadow: 0 0 6px rgba(0, 255, 65, 0.4);
+    animation: role-change 10s infinite;
+}
+
+@keyframes role-change {
+    0%, 15%   { transform: translateY(0%); }
+    20%, 35%  { transform: translateY(-100%); }
+    40%, 55%  { transform: translateY(-200%); }
+    60%, 75%  { transform: translateY(-300%); }
+    80%, 95%  { transform: translateY(-400%); }
+    100%      { transform: translateY(0%); }
+}
+
+/* ----------------- Footer ----------------- */
+.end-page {
+    text-align: center;
+    padding: 30px;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+/* ----------------- Dark Mode Overrides ----------------- */
 body.dark {
-    background-color: black;
-    color: white;
-
-
-}
-
-body.dark button {
-    background-color: black;
+    background-color: #121212;
     color: white;
 }
 
-body.dark input {
-    background-color: black;
-    color: white;
-}
-
+body.dark .website-name,
+body.dark .bio-text,
 body.dark a {
     color: white;
 }
 
-.first-article {
-    display: inline-block;
+body.dark .searchbar {
+    background-color: #222;
+    color: white;
+    border-color: #444;
 }
 
-.circle-image {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    left: 0;
-    position: relative;
-    text-align: center;
-    margin-left: -25;
-}
-
-.image-circle {
-    display: flex;
-}
-
-.nvidia-article {
-    color: black;
-}
-.articles-btn{
-
-    font-size: 14px;
-    color: black;
-    vertical-align: top;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    font-family: monospace;
-    font-weight: bolder;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 3px;
-    margin-left: 6px;
-}
-.photo-frame{
-    margin-top: 70;
-    margin-left: 100;
-    display: inline-block;
-    
-}
-.my-photo{
-    height: 650;
-    width: 650;
-    border-radius: 50%;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
-}
-.about-mee{
-    display: inline-block;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 80;
-    margin-left: 700;
-    margin-top: -565;
-    font-weight: bolder;
-    text-shadow: black  ;
-
-}
-.second-line{
-    width: 820;
-    padding-bottom: 10;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    border-width: 1px;
-    text-align: left;
-    display: inline-block;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 28;
-    margin-left: 700;
-    margin-top: -260;
-    margin-right: 200;
-    left: 0;
-
-}
-.text-changer{
-    height: 200px;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    font-family: monospace;
-    font-weight: bolder;
-    font-size: 61;
-    box-sizing: content-box;
-
-}
-.intro-text{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
-    
-}
-.roles-container{
-    overflow: hidden;
-    position: relative;
-}
-.role{
-    font-family: monospace;
-    display: block;
-    height: 100%;
-    padding-top: 3;
-    padding-left: 9px;
-    color: #00ff41;
-    box-shadow: #00ff41;
-    text-shadow: 0 0 6px #00ff41;
-    animation: role-change 7s infinite;
-}
-@keyframes role-change{
-    10%{
-        transform: translateY(-102%);
+/* ----------------- Mobile Responsiveness ----------------- */
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
     }
-    25%{
-        transform: translateY(-100%);
-    }
-    35%{
-        transform: translateY(-202%);
-    }
-    50%{
-        transform: translateY(-200%);
 
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 20px;
     }
-    60%{
-        transform: translateY(-302%);
+
+    .my-photo {
+        width: 220px;
     }
-    75%{
-        transform: translateY(-300%);
+
+    .about-mee {
+        font-size: 2.2rem;
     }
-    85%{
-        transform: translateY(-402%);
+
+    .text-changer {
+        justify-content: center;
+        font-size: 1.5rem;
     }
-    100%{
-        transform: translateY(-400%);
+
+    .bio-text {
+        font-size: 1rem;
     }
 }
