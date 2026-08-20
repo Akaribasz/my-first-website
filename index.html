@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,134 +10,76 @@
             document.documentElement.classList.add('dark');
         }
     </script>
-    <style>
-        p {
-            font-family: monospace;
-        }
-
-        ul {
-            text-align: center;
-            font-family: monospace;
-            font-size: 19px;
-            list-style-position: inside;
-            list-style-type: disc;
-
-        }
-
-        .list {
-            margin-left: 510px;
-            margin-right: 510px;
-            text-align: left;
-        }
-
-
-        li:hover {
-            transition: padding-left 0.4s;
-            padding-left: 14;
-
-
-        }
-
-        li:not(:hover) {
-            transition: padding-left 0.4s;
-        }
-        footer{
-            margin-top: 110;
-        }
-        
-    </style>
-
-
 </head>
 
 <body>
 
-    <header>
+    <header class="navbar">
         <button class="website-name" onclick='location.href="index.html"'>
             AlsoKnowAsRibas.com
         </button>
 
-        <a class="about-link" href="About.html" target="_blank">
-
-
-
-            <button class="about-btn" onclick='location.href="About.html"'>
-                About
-            </button>
-
+        <nav class="nav-links">
+            <a class="about-btn" href="About.html">About</a>
+            <a class="articles-btn" href="ribas-articles-page.html">Articles</a>
             <a class="github" href="https://github.com/Akaribasz" target="_blank">
-                <img class="gitLogo" src="Photos/github_logo_icon_229278.webp" alt="">
+                <img class="gitLogo" src="Photos/github_logo_icon_229278.webp" alt="GitHub">
             </a>
-            <button class="articles-btn" onclick='location.href="ribas-articles-page.html"'>
-                Articles
-            </button>
-
             <input class="searchbar" type="text" placeholder="Search the site..." id="searchbarr">
-
-
-
+            
             <div class="trilho" id="trilho">
                 <div class="indicador"></div>
-
             </div>
-
+        </nav>
     </header>
 
-
-<div class="photo-frame">
-    <a href="About.html">
-    <img class="my-photo" src="Photos/IMG_9616.PNG" alt="">
-    </a>
-    <span class="about-mee">
-Wassup, It's Ribas. <br class="second-line"> 
-<div class="text-changer">
-    <span class="intro-text">
-        I'm a: 
-    </span>
-    <div class="roles-container">
-        <span class="role"></span>
-        <span class="role">Developer</span>
-        <span class="role">Back-end Developer</span>
-        <span class="role">Youtuber</span>
-        <span class="role">IT Student</span>
-        <span class="role">"Javeiro"</span>
-
-    </div>
-
-</div>
-    </span>
-    <span class="second-line">
-        Student in Systems Analysis and Development and a cybersecurity enthusiast. I made this website to learn more about HTML and CSS. Find out more about me in "About" section or u can just click into my photo.
-
-    </span>
-</div>
-
-
+    <main class="hero-container">
+        <a href="About.html" class="photo-link">
+            <img class="my-photo" src="Photos/IMG_9616.PNG" alt="Luiz Ribas Photo">
+        </a>
+        
+        <div class="hero-content">
+            <h1 class="about-mee">Wassup, It's Ribas.</h1>
+            
+            <div class="text-changer">
+                <span class="intro-text">I'm a:</span>
+                <div class="roles-container">
+                    <span class="role">Developer</span>
+                    <span class="role">Back-end Dev</span>
+                    <span class="role">Youtuber</span>
+                    <span class="role">IT Student</span>
+                    <span class="role">"Javeiro"</span>
+                </div>
+            </div>
+            
+            <p class="bio-text">
+                Student in Systems Analysis and Development and a cybersecurity enthusiast. I made this website to learn more about HTML and CSS. Find out more about me in the "About" section or you can just click on my photo.
+            </p>
+        </div>
+    </main>
 
     <footer class="end-page">
         © 2026 Luiz Ribas - All Rights Reserved
-
     </footer>
     
     <script>
         const trilho = document.getElementById('trilho');
-const body = document.body;
+        const body = document.body;
 
-if(localStorage.getItem('theme')==='dark'){
-    trilho.classList.add ('dark');
-    body.classList.add('dark');
-}
+        if (localStorage.getItem('theme') === 'dark') {
+            trilho.classList.add('dark');
+            body.classList.add('dark');
+        }
 
-trilho.addEventListener('click', ()=>{
-    trilho.classList.toggle('dark');
-    body.classList.toggle('dark');
-    if (body.classList.contains('dark')){
-        localStorage.setItem('theme', 'dark');
-    }else{
-        localStorage.setItem('theme','light');
-    }
-    
-});
+        trilho.addEventListener('click', () => {
+            trilho.classList.toggle('dark');
+            body.classList.toggle('dark');
+            if (body.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
     </script>
-
 </body>
+</html>
