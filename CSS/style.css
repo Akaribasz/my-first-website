@@ -5,90 +5,105 @@
 }
 
 body {
-    background-color: white;
-    color: black;
+    background-color: #ffffff;
+    color: #000000;
     font-family: monospace;
-    transition: background-color 0.4s, color 0.4s;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background-color 0.4s, color 0.4s;
+    overflow-x: hidden;
 }
 
-/* ----------------- Header & Navbar ----------------- */
+/* ----------------- Sticky Header ----------------- */
 .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    flex-wrap: wrap;
-    gap: 15px;
+    padding: 14px 28px;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .website-name {
     background: none;
     border: none;
-    font-family: inherit;
-    font-size: 1.1rem;
+    font-family: monospace;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    white-space: nowrap;
+    color: inherit;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    gap: 14px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: inherit;
+    font-size: 0.9rem;
     font-weight: bold;
-    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
 }
 
 .gitLogo {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     display: block;
 }
 
 .searchbar {
-    padding: 4px 8px;
-    font-family: inherit;
-    border: 1px solid #ccc;
+    padding: 5px 8px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    width: 140px;
+    border: 1px solid #777;
     border-radius: 4px;
+    background: transparent;
+    color: inherit;
     outline: none;
 }
 
 /* ----------------- Theme Switcher ----------------- */
 .trilho {
-    width: 48px;
+    width: 44px;
     height: 22px;
-    background-color: black;
+    background-color: #000000;
     border-radius: 20px;
     position: relative;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .trilho .indicador {
     width: 18px;
     height: 18px;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 50%;
     position: absolute;
     top: 2px;
     left: 2px;
-    transition: left 0.3s;
+    transition: left 0.3s ease;
 }
 
 .trilho.dark {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 .trilho.dark .indicador {
-    left: 28px;
-    background-color: black;
+    left: 24px;
+    background-color: #000000;
 }
 
 /* ----------------- Hero / Main Section ----------------- */
@@ -97,26 +112,34 @@ body {
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding: 40px 20px;
+    padding: 60px 24px;
     max-width: 1200px;
     margin: auto;
     width: 100%;
 }
 
+.photo-frame {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
 .my-photo {
-    width: 380px;
+    width: 360px;
+    height: 360px;
     max-width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    display: block;
 }
 
 .hero-content {
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
 
 .about-mee {
@@ -126,34 +149,39 @@ body {
     line-height: 1.1;
 }
 
-.bio-text {
+.second-line {
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #333;
+    color: inherit;
+    opacity: 0.9;
 }
 
 /* ----------------- Animated Text Changer ----------------- */
 .text-changer {
-    height: 50px;
+    height: 44px;
     display: flex;
     align-items: center;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
+}
+
+.intro-text {
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 .roles-container {
     overflow: hidden;
-    height: 50px;
+    height: 44px;
     margin-left: 10px;
 }
 
 .role {
     display: block;
-    height: 50px;
-    line-height: 50px;
+    height: 44px;
+    line-height: 44px;
     color: #00cc33;
-    text-shadow: 0 0 6px rgba(0, 255, 65, 0.4);
+    text-shadow: 0 0 6px rgba(0, 204, 51, 0.4);
     animation: role-change 10s infinite;
 }
 
@@ -171,45 +199,81 @@ body {
     text-align: center;
     padding: 30px;
     font-weight: bold;
+    font-size: 0.9rem;
     margin-top: auto;
 }
 
 /* ----------------- Dark Mode Overrides ----------------- */
 body.dark {
-    background-color: #121212;
-    color: white;
+    background-color: #111111;
+    color: #ffffff;
 }
 
-body.dark .website-name,
-body.dark .bio-text,
-body.dark a {
-    color: white;
+body.dark .navbar {
+    background-color: rgba(17, 17, 17, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 body.dark .searchbar {
-    background-color: #222;
-    color: white;
     border-color: #444;
 }
 
 /* ----------------- Mobile Responsiveness ----------------- */
-@media (max-width: 850px) {
+@media (max-width: 768px) {
+    /* Keeps header elements side-by-side on mobile */
     .navbar {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px 10px;
+        padding: 10px 12px;
+        gap: 6px;
     }
 
+    .website-name {
+        font-size: 0.78rem;
+    }
+
+    .nav-links {
+        gap: 6px;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .gitLogo {
+        width: 17px;
+        height: 17px;
+    }
+
+    .searchbar {
+        width: 70px;
+        font-size: 0.7rem;
+        padding: 3px 5px;
+    }
+
+    .trilho {
+        width: 36px;
+        height: 18px;
+    }
+
+    .trilho .indicador {
+        width: 14px;
+        height: 14px;
+    }
+
+    .trilho.dark .indicador {
+        left: 20px;
+    }
+
+    /* Stack image and bio vertically on mobile */
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
-        padding: 20px;
+        gap: 28px;
+        padding: 30px 16px;
     }
 
     .my-photo {
-        width: 220px;
+        width: 240px;
+        height: 240px;
     }
 
     .about-mee {
@@ -218,10 +282,10 @@ body.dark .searchbar {
 
     .text-changer {
         justify-content: center;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
-    .bio-text {
-        font-size: 1rem;
+    .second-line {
+        font-size: 0.98rem;
     }
 }
