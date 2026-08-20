@@ -44,9 +44,6 @@
         footer{
             margin-top: 110;
         }
-        body{
-            background-color: black;
-        }
         
     </style>
 
@@ -121,7 +118,28 @@ Wassup, It's Ribas. <br class="second-line">
         © 2026 Luiz Ribas - All Rights Reserved
 
     </footer>
-    <script src="/JavaScript/main.js"></script>
+    
+    <script>
+        const trilho = document.getElementById('trilho');
+const body = document.body;
+
+if(localStorage.getItem('theme')==='dark'){
+    trilho.classList.add ('dark');
+    body.classList.add('dark');
+}
+
+trilho.addEventListener('click', ()=>{
+    trilho.classList.toggle('dark');
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')){
+        localStorage.setItem('theme', 'dark');
+    }else{
+        localStorage.setItem('theme','light');
+    }
+    
+});
+    </script>
+    
     <script src="/JavaScript/searchBar.js"></script>
 
 </body>
