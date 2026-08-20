@@ -15,7 +15,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ----------------- Sticky Header ----------------- */
 .navbar {
     position: sticky;
     top: 0;
@@ -75,7 +74,6 @@ body {
     outline: none;
 }
 
-/* ----------------- Theme Switcher ----------------- */
 .trilho {
     width: 44px;
     height: 22px;
@@ -106,7 +104,6 @@ body {
     background-color: #000000;
 }
 
-/* ----------------- Hero / Main Section ----------------- */
 .hero-container {
     display: flex;
     align-items: center;
@@ -157,7 +154,6 @@ body {
     opacity: 0.9;
 }
 
-/* ----------------- Animated Text Changer ----------------- */
 .text-changer {
     height: 44px;
     display: flex;
@@ -194,7 +190,6 @@ body {
     100%      { transform: translateY(0%); }
 }
 
-/* ----------------- Footer ----------------- */
 .end-page {
     text-align: center;
     padding: 30px;
@@ -203,7 +198,6 @@ body {
     margin-top: auto;
 }
 
-/* ----------------- Dark Mode Overrides ----------------- */
 body.dark {
     background-color: #111111;
     color: #ffffff;
@@ -218,7 +212,6 @@ body.dark .searchbar {
     border-color: #444;
 }
 
-/* ----------------- Mobile Responsiveness ----------------- */
 @media (max-width: 768px) {
     /* Keeps header elements side-by-side on mobile */
     .navbar {
@@ -263,7 +256,6 @@ body.dark .searchbar {
         left: 20px;
     }
 
-    /* Stack image and bio vertically on mobile */
     .hero-container {
         flex-direction: column;
         text-align: center;
