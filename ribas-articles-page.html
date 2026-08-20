@@ -24,26 +24,39 @@
 
         }
 
-        .list {
-            
-            text-align: center;
-        }
+    
 
 
-        li:hover {
+        .article:hover {
             transition: padding-left 0.4s;
-            padding-left: 14;
+            padding-left: 14px;
 
 
         }
 
-        li:not(:hover) {
+        .article:not(:hover) {
             transition: padding-left 0.4s;
         }
         .title{
             font-weight: bolder;
             font-family: monospace;
-            text-align: center;
+            text-align: left;
+
+        }
+        .articles-container{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .list{
+            padding-top: 35px;
+            max-width: 800px;  
+            text-align: left;
+        }
+        li{
+            padding-bottom: 20px;
+        }
+
+        
 
        
     </style>
@@ -74,23 +87,25 @@
 
 
 
-    <main class="home-page-content">
-        <p class="title">
-            Featured:
-        </p>
+    <main class="articles-container">
+       
 
 
         <ul>
             <div class="list">
+                 <p class="title">
+            Featured:
+        </p>
+
                 <li>
                     Aug 17 -
                     <a class="article" href="Installing-nvidia-drivers-on-debian.html">Why its so HARD? - How to
-                        install NVIDIA-DRIVERS on Debian 13</a>
+                        install NVIDIA-DRIVERS on Debian</a>
                     </p>
                 </li>
                 <li>
                     Aug 9 -
-                    <a class="articles" href="how-i-made-this-website.html">What u need to study to make a Website like this one:</a>
+                    <a class="article" href="how-i-made-this-website.html">What u need to study to make a Website like this one:</a>
                 </li>
             </div>
         </ul>
@@ -122,5 +137,4 @@
         });
     </script>
 </body>
-
 </html>
