@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why its so HARD? - How to install NVIDIA-DRIVERS on Debian 13:</title>
+    <title>Why its so HARD? - How to install NVIDIA-DRIVERS on Debian 13</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script>
         if (localStorage.getItem('theme') === 'dark') {
@@ -11,50 +11,60 @@
         }
     </script>
     <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 20px 60px 20px;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        .nvidia-title {
+            margin-top: 30px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            line-height: 1.3;
+        }
+
         p {
-            font-family: monospace;
-            text-align: center;
-            font-size: 17px;
-            padding-bottom: 10px;
-        }
-
-        h1 {
-            margin-top: 30;
-            font-size: 30;
-            text-align: center;
-            font-family: monospace;
-            margin-bottom: 30;
-        }
-
-        .nvidia-text {
-            padding-bottom: 30;
-            
-            
-            font-size: 18px;
-            text-align: center;
-            margin-left: 260px;
-            margin-right: 260px;
+            font-size: 16px;
+            line-height: 1.6;
+            padding-bottom: 16px;
         }
 
         .nvidia {
             max-width: 100%;
             height: auto;
-            padding-bottom: 20px;
+            border-radius: 8px;
+            margin: 15px 0 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-        .preto{
-            font-weight: bolder;
+
+        .preto {
+            font-weight: bold;
         }
-        .instructions{
-            
+
+        .instructions {
             color: #00ff41;
-            padding-top: 10;
-            padding-bottom: 10;
-            border-style: solid;
-            border-width: 1px;
+            background-color: #111;
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid #00ff41;
+            margin: 15px 0;
+            word-break: break-word; /* Prevents overflow on mobile */
+            text-align: left;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nvidia-title {
+                font-size: 1.4rem;
+            }
+            .article-container {
+                padding: 15px 16px 40px 16px;
+            }
         }
     </style>
-
-
 </head>
 
 <body>
@@ -78,38 +88,38 @@
         </nav>
     </header>
 
-    <h1 class="nvidia-title">
-        Why its so HARD? - How to install NVIDIA-DRIVERS on Debian 13:
-    </h1>
-    <div class="nvidia-text">
+    <main class="article-container">
+        <h1 class="nvidia-title">
+            Why its so HARD? - How to install NVIDIA-DRIVERS on Debian 13
+        </h1>
+
         <p>
             In this year i decided to move on Linux as my day-to-day OS and i choose Debian to be my very first distro.
             Until this time Debian are in the 13 version, but my began when i needed to install the NVIDIA-DRIVERS...
-            for some reason, this task is practically imposible in my case due to the fact that i have a new-gen GPU
-            (RTX 5060Ti)but after a few searchs (and a lot of Headaches) i manage to resolve the situation. I'll explain
-            how:
-
+            for some reason, this task is practically impossible in my case due to the fact that i have a new-gen GPU
+            (RTX 5060Ti) but after a few searches (and a lot of headaches) i managed to resolve the situation. I'll explain how:
         </p>
-        <img class="nvidia" src="Photos/IMG_9714.JPG" alt="">
+
+        <img class="nvidia" src="Photos/IMG_9714.JPG" alt="NVIDIA driver installation output">
 
         <p>
-            <u>DISCLAIMER:</u> Before we started, this method solved MY problem with MY gpu, keep that in mind. Probally if u had an older
-            one u actually doesn't need to follow this tutorial, ok?
+            <u>DISCLAIMER:</u> Before we start, this method solved MY problem with MY gpu, keep that in mind. Probably if u had an older one u actually don't need to follow this tutorial, ok?
         </p>
+
         <p class="preto">
-            After you downloading Debian u can follow these steps: <br>
-        <p class="instructions">
-            Run a Terminal -> sudo su (to root user) -> apt install extrepo -> extrepo update -> extrepo search nvidia |
-            less -> extrepo nvidia-cuda -> cd /etc/apt/sources.list.d/ -> apt update -> apt install build-essential
-            linux-headers-amd64 -> apt instal nvidia-open
-        </p>    
+            After you download Debian u can follow these steps:
         </p>
-        <p>
-            After that u can check if worked using "nvidia-smi" command in Terminal. Something like the photo above should runs(using your GPU Specs of course).
-        </p>
-    </div>
 
-   <footer class="end-page">
+        <p class="instructions">
+            Run a Terminal -> sudo su (to root user) -> apt install extrepo -> extrepo update -> extrepo search nvidia | less -> extrepo nvidia-cuda -> cd /etc/apt/sources.list.d/ -> apt update -> apt install build-essential linux-headers-amd64 -> apt install nvidia-open
+        </p>    
+
+        <p>
+            After that u can check if it worked using "nvidia-smi" command in Terminal. Something like the photo above should run (using your GPU Specs of course).
+        </p>
+    </main>
+
+    <footer class="end-page">
         © 2026 Luiz Ribas - All Rights Reserved
     </footer>
     
@@ -133,3 +143,4 @@
         });
     </script>
 </body>
+</html>
