@@ -1,5 +1,3 @@
-
-
 const trilho = document.getElementById('trilho');
 const body = document.body;
 
